@@ -1,0 +1,12 @@
+name: nf-CNE_utils
+channels:
+- bioconda
+- conda-forge
+- defaults
+dependencies:
+- samtools=1.21
+- bedtools=2.31.1
+- pip
+- ucsc-twobittofa=472
+- pip:
+    - requests

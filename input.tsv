@@ -1,0 +1,3 @@
+species	reference	chain	UCSC_filters	Tool_Filters	BLAT_hits_threshold	BLAT_identity_threshold
+hg38		example_inputs/SMALL_hg38.mm10.net.axt.gz	"gap,ncbiRefSeqCurated,rmsk"	BLAT	4	0.9
+mm10		example_inputs/SMALL_mm10.hg38.net.axt	"gap,ncbiRefSeqCurated,rmsk"	BLAT	4	0.9
