@@ -108,7 +108,7 @@ def fetch_track(species, track, chrom=None):
 
 
 def write_track_bed(data, track, bed_handle, chrom_exclude):
-    column_map = {col["name"]: i for i, col in enumerate(data["columnTypes"])}
+    column_map = {col["name"]: i for i, col in enumerate(data["columnTypes"][track])}
 
     chrom_field = detect_field(column_map, ["chrom", "genoName"])
     start_field = detect_field(column_map, ["chromStart", "genoStart","cdsStart", "txStart","thickStart"])
