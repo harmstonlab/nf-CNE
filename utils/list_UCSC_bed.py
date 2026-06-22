@@ -27,12 +27,22 @@ if response.status_code!=200:
 
 else:
     json=response.json()
-    for track in json[species]:
-        if "compositeContainer" in json[species][track].keys():
+    species_data=None
+    try:
+        species_data=json[species]
+    except KeyError:
+        for key in json.keys():
+            if type(json[key])==dict:
+                species_data=json[key]
+                break
+    if species_data is None:
+        sys.exit(f"Error: No data found for species '{species}' in UCSC API response.")
+    for track in species_data:
+        if "compositeContainer" in species_data[track].keys():
             continue
-        elif "bed" in json[species][track]["type"].lower():
+        elif "bed" in species_data[track]["type"].lower():
             print(track.strip())
-        elif "genepred" in json[species][track]["type"].lower():
+        elif "genepred" in species_data[track]["type"].lower():
             print(track.strip())
-        elif "rmsk" in json[species][track]["type"].lower():
+        elif "rmsk" in species_data[track]["type"].lower():
             print(track.strip())
