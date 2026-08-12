@@ -26,4 +26,4 @@ for file in files:
             for line in f_in:
                 CNE_number=line.split("\t")[3]
                 if CE_seen_in_N_species[CNE_number] == num_files:
-                    f_out.write("\t".join(line.strip().split("\t")[:5])+"\n")
+                    f_out.write("\t".join(line.strip().split("\t")[:6])+"\n")
